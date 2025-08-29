@@ -1,0 +1,11 @@
+# .gitignore (at D:\EduQuiz\)
+node_modules
+.env
+*.log
+
+# Backend specific
+/backend/node_modules
+/backend/.env
+
+# Frontend specific (if you had build processes, otherwise just node_modules)
+/frontend/node_modules

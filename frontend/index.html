@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuiz Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js for analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>EduQuiz</h1>
+        <nav>
+            <button id="nav-dashboard" class="hidden">Dashboard</button>
+            <button id="nav-create-quiz" class="hidden">Create Quiz</button>
+            <button id="nav-logout" class="hidden">Logout</button>
+            <button id="nav-login-register" class="visible">Login/Register</button>
+        </nav>
+    </header>
+
+    <main id="app-container">
+        <!-- Content will be loaded dynamically here -->
+        <div class="initial-load-message">
+            Loading EduQuiz platform...
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

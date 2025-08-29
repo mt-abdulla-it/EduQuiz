@@ -1,0 +1,666 @@
+/* Custom CSS Variables */
+:root {
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --secondary-color: #6c757d;
+    --accent-color: #007bff;
+    --accent-dark: #0056b3;
+    --background-light: #f8f9fa;
+    --background-dark: #e9ecef;
+    --text-color: #343a40;
+    --border-color: #dee2e6;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --success-bg: #d4edda;
+    --success-text: #155724;
+    --error-bg: #f8d7da;
+    --error-text: #721c24;
+    --warning-bg: #fff3cd;
+    --warning-text: #856404;
+    --info-bg: #d1ecf1;
+    --info-text: #0c5460;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --border-radius: 0.25rem;
+    --border-radius-lg: 0.5rem;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-dark);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    font-size: 1.8rem;
+}
+
+nav button {
+    background-color: var(--primary-dark);
+    color: white;
+    border: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    cursor: pointer;
+    margin-left: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-size: 0.9rem;
+}
+
+nav button:hover {
+    background-color: #003d80; /* Slightly darker than primary-dark */
+    transform: translateY(-1px);
+}
+
+nav button:active {
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none !important; /* Use !important to override other display properties */
+}
+
+.visible {
+    display: inline-block !important;
+}
+
+/* Main Content Area */
+main {
+    padding: var(--spacing-lg);
+    max-width: 1000px;
+    margin: var(--spacing-lg) auto;
+    background-color: white;
+    box-shadow: 0 0 15px var(--shadow-light);
+    border-radius: var(--border-radius);
+}
+
+/* Forms (General styles) */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--background-light);
+}
+
+form label {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    display: block;
+    color: var(--text-color);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form input[type="date"],
+form select,
+form textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    width: 100%;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+form button[type="submit"],
+.action-button { /* Generic button style for primary actions */
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.75rem var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    width: auto;
+    align-self: flex-start; /* Align submit button to the left */
+}
+
+form button[type="submit"]:hover,
+.action-button:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-1px);
+}
+form button[type="submit"]:active,
+.action-button:active {
+    transform: translateY(0);
+}
+
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: var(--spacing-lg) 0;
+}
+
+/* Messages (Success/Error/Info) */
+.message {
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    border: 1px solid transparent;
+    text-align: center;
+    width: 100%;
+}
+
+.message.success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border-color: #c3e6cb;
+}
+
+.message.error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border-color: #f5c6cb;
+}
+
+.message.info {
+    background-color: var(--info-bg);
+    color: var(--info-text);
+    border-color: #bee5eb;
+}
+
+.message.warning {
+    background-color: var(--warning-bg);
+    color: var(--warning-text);
+    border-color: #ffeeba;
+}
+
+
+/* Card Styles for Lists (Quizzes, Users, Results) */
+.card-list {
+    display: grid;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.card {
+    background-color: var(--background-dark);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px var(--shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+.card-content {
+    flex-grow: 1;
+}
+
+.card-actions {
+    margin-left: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.card-actions button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease;
+}
+
+.card-actions button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Specific button colors for delete/approve */
+.card-actions button.delete-btn {
+    background-color: #dc3545;
+}
+.card-actions button.delete-btn:hover {
+    background-color: #c82333;
+}
+.card-actions button.approve-btn {
+    background-color: var(--accent-color);
+}
+.card-actions button.approve-btn:hover {
+    background-color: var(--accent-dark);
+}
+
+/* Question Item in Quiz Creation/Taking/Results */
+.question-item {
+    background-color: #f0f8ff;
+    border: 1px solid #cceeff;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    border-radius: var(--border-radius);
+}
+
+.question-options label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.question-options input[type="radio"],
+.question-options input[type="checkbox"] {
+    margin-right: 0.75rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.question-item.correct {
+    background-color: var(--success-bg);
+    border-color: #b0e9b0;
+}
+.question-item.incorrect {
+    background-color: var(--error-bg);
+    border-color: #f0b0f0;
+}
+
+/* Loading Spinner */
+.loading-spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Specifics for Admin Dashboard */
+#admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background-color: var(--background-dark);
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px var(--shadow-light);
+}
+
+#admin-stats p {
+    background-color: white;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+#admin-stats p strong {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Styles for dynamic option inputs in quiz creation */
+.options-container {
+    margin-top: var(--spacing-sm);
+    border-top: 1px dashed var(--border-color);
+    padding-top: var(--spacing-sm);
+}
+
+.option-input-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+}
+
+.option-input-group label {
+    flex-shrink: 0;
+    width: 25px;
+    text-align: right;
+    margin-right: var(--spacing-xs);
+}
+
+.option-input-group input[type="text"],
+.option-input-group input[type="text"][readonly] {
+    flex-grow: 1;
+    margin-bottom: 0;
+    background-color: var(--background-light);
+    cursor: not-allowed;
+}
+
+.option-input-group .remove-option-btn {
+    flex-shrink: 0;
+}
+
+.add-option-btn {
+    align-self: flex-start;
+}
+
+/* Badge for displaying Grade on Quizzes */
+.badge-grade {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.2em 0.6em;
+    border-radius: var(--border-radius);
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: var(--spacing-xs);
+    vertical-align: middle;
+}
+
+/* --- Professional Login/Register Page Styling --- */
+
+/* Overall container for the two-pane layout */
+.auth-page-wrapper {
+    display: flex;
+    min-height: 80vh; /* Takes most of the viewport height */
+    max-width: 1000px; /* Adjust as per your design */
+    margin: var(--spacing-lg) auto;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+    overflow: hidden; /* Important for rounded corners on inner panes */
+    background-color: white;
+}
+
+.auth-left-pane {
+    flex: 1;
+    /* Updated background to use the provided image */
+    background-color: #c9c9c9; /* Fallback color, close to the image background */
+    background-image: url('./assets/education-login.jpg'); /* Replace with your actual image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    position: relative;
+    color: white;
+    text-align: center;
+}
+/* Re-added overlay for better text readability over the image */
+.auth-left-pane::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Light transparent dark overlay */
+    border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg); /* Match parent border-radius */
+    z-index: 0;
+}
+
+
+.auth-left-content {
+    position: relative;
+    z-index: 1; /* Ensure text is above the overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.auth-left-content h1 {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Stronger shadow for readability */
+}
+
+.auth-left-content p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Stronger shadow for readability */
+}
+
+.auth-right-pane {
+    flex: 1;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form Switcher (Login/Register buttons) */
+.auth-form-switcher {
+    display: flex;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+}
+
+.auth-form-switcher button {
+    flex: 1;
+    padding: 0.75rem var(--spacing-md);
+    border: none;
+    background-color: var(--background-light);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+}
+
+.auth-form-switcher button.active {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.auth-form-switcher button:hover:not(.active) {
+    background-color: var(--background-dark);
+}
+
+/* Individual Form Containers */
+#login-form-container,
+#register-form-container {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Overriding general form styles for auth forms */
+.auth-form {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    margin-top: var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+}
+
+.auth-form h2, .auth-form h3 {
+    margin-bottom: var(--spacing-md);
+    grid-column: 1 / -1;
+    color: var(--primary-dark);
+}
+
+/* Adjustments for multiple columns in register form on larger screens */
+@media (min-width: 769px) {
+    .auth-form {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    .auth-form .form-group {
+        grid-column: span 1;
+    }
+    .auth-form h3, .auth-form .action-button {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Specific styling for smaller feedback text below inputs */
+.form-text-feedback {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: block;
+    text-align: left;
+    color: var(--secondary-color);
+}
+.form-text-feedback.success {
+    color: var(--success-text);
+}
+.form-text-feedback.error {
+    color: var(--error-text);
+}
+.form-text-feedback.info {
+    color: var(--info-text);
+}
+.form-text-feedback.warning {
+    color: var(--warning-text);
+}
+
+/* General form group input/select styles */
+.form-group {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+    text-align: left;
+}
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--text-color);
+}
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .auth-page-wrapper {
+        flex-direction: column;
+        max-width: 95%;
+        min-height: auto;
+    }
+    .auth-left-pane {
+        flex: none;
+        height: 150px;
+        border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    }
+    .auth-left-pane::before {
+        border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    }
+    .auth-left-content h1 {
+        font-size: 2rem;
+    }
+    .auth-left-content p {
+        font-size: 1rem;
+    }
+    .auth-right-pane {
+        padding: var(--spacing-md);
+    }
+    .auth-form-switcher {
+        max-width: 100%;
+        border-radius: var(--border-radius);
+    }
+    #login-form-container,
+    #register-form-container {
+        max-width: 100%;
+    }
+    .auth-form {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    .auth-form h3, .auth-form .action-button {
+        grid-column: auto;
+    }
+}

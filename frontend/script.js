@@ -1,5 +1,5 @@
 // frontend/script.js
-const API_BASE_URL = "https://eduquiz-fyxf.onrender.com//api"; // Ensure this matches your backend port
+const API_BASE_URL = "https://eduqu.netlify.app//api"; // Ensure this matches your backend port
 
 const appContainer = document.getElementById("app-container");
 const navDashboard = document.getElementById("nav-dashboard");

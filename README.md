@@ -24,28 +24,6 @@ An interactive quiz platform for educational purposes. Built with a modern backe
 **Authentication:**
 - JWT (JSON Web Tokens)
 
-## 📁 Project Structure
-
-EduQuiz/
-├── backend/
-│   ├── config/
-│   │   └── db.js
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   │   ├── adminRoutes.js
-│   │   ├── authRoutes.js
-│   │   ├── quizRoutes.js
-│   │   └── resultRoutes.js
-│   ├── .env
-│   ├── package.json
-│   └── server.js
-└── frontend/
-    ├── assets/
-    ├── scripts/
-    ├── index.html
-    └── package.json
-
 ## 🧑‍💻 Installation
 
 ### Prerequisites

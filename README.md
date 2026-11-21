@@ -1,5 +1,13 @@
 # EduQuiz
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Stack-Node.js%20%7C%20Express%20%7C%20MongoDB-green?style=for-the-badge&logo=node.js" />
+  <img src="https://img.shields.io/badge/Release-v1.0.0-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge" />
+</p>
+
+
 An interactive quiz platform for educational purposes. Built with a modern backend and a responsive frontend.
 
 ## 🚀 Features
